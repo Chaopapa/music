@@ -106,14 +106,16 @@ export default {
       padding: 0 10px;
       box-sizing: border-box;
       .num {
-        float: left;
+        vertical-align: middle;
+        display: inline-block;
         text-align: center;
         font-size: 12px;
         color: #444;
         margin-right: 20px;
       } 
       .tit {
-        float: left;
+        vertical-align: middle;
+        display: inline-block;
         width: 100px;
         font-size: 12px;
         color: #444;

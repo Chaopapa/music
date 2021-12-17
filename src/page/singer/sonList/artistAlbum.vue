@@ -4,9 +4,7 @@
       <ul class="imgItems">
         <li class="imgItem" v-for='(item, key) in arr' :key='key'>
           <div class="imgRow">
-            <router-link :to='`/album/${item.id}`' class="aLink">
-              <img :src="item.picUrl" alt="专辑图片" class="img">
-            </router-link>
+            <img :src="item.picUrl" alt="专辑图片" class="img">
             <div class="mask"></div>
           </div>
           <p class="tit"><a href="#">{{item.songTit}}</a></p>
@@ -126,22 +124,18 @@ export default {
         width: 120px;
         height: 120px;
         position: relative;
-        .aLink {
-          width: 120px;
-          .img {
-            width: 100%;
-            height: 100%;
-          }
-          .mask {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 4px;
-            right: -119px;
-            background: url(../../../assets/zy_coverall.png) no-repeat -288px -856px;
-          }
+        .img {
+          width: 100%;
+          height: 100%;
         }
-        
+        .mask {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 4px;
+          right: -119px;
+          background: url(../../../assets/zy_coverall.png) no-repeat -288px -856px;
+        }
       }
       .tit {
         color: #333;

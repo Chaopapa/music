@@ -86,32 +86,22 @@ export default {
 
     },
 
-    
     //点赞事件
     likeAction(index){
-      let count = 0;
       if(!this.$store.state.user.isLogin){
         alert('请先登录');
       }else{
-        // count+=1;
         this.selectIndex = index;
-        
+
         this.comdData.forEach((item, index)=>{
         console.log(item);
-        // item.liked = !item.liked;
-        console.log(index);
+        item.liked = !item.liked;
         
-        if(count%2){
-          this.selectIndex = index;
-           item.likedCount++;
-        }else {
+        if(item.liked){
+          item.likedCount++;
+        }else{
           item.likedCount--;
         }
-        // if(item.liked){
-        //   item.likedCount++;
-        // }else{
-        //   item.likedCount--;
-        // }
       })
         // getSongLike(api.SONG_LIKE, 186016, id, 0, 0);
       }

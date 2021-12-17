@@ -1,6 +1,6 @@
 <template>
   <div class="hotList">
-    <div class="top" v-show='show'>
+    <div class="top">
       <div class="leftCo">
         <i class="circle el-icon-s-help"></i>
         <h3 class="hotTit">热门推荐</h3>
@@ -18,7 +18,7 @@
         <a class='right el-icon-right'></a>
       </span>
     </div>
-    <p class="line" v-show='show'></p>
+    <p class="line"></p>
     <div class="imgCons">
       <router-link class="imgCon" v-for='(item,index) in this.recommendArr' :key='index' :to='`/songList/${item.id}`'>
         <div class="imgs">
@@ -42,8 +42,7 @@ export default {
   },
   data(){
     return {
-      recommendArr: [],
-      show: false
+      recommendArr: []
     }
   },
   methods:{
@@ -58,7 +57,6 @@ export default {
         }
         recommendObj.playCount = parseInt(recommendObj.playCount/10000) + '万';
         this.recommendArr.push(recommendObj);
-        this.show = true;
       })
       // console.log(this.recommendArr);
       
